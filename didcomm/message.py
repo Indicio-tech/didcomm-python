@@ -326,6 +326,9 @@ class GenericMessage(Generic[T]):
     pthid: Optional[str] = attr.ib(
         validator=validator__optional(validator__instance_of(str)), default=None
     )
+    lang: Optional[str] = attr.ib(
+        validator=validator__optional(validator__instance_of(str)), default=None
+    )
     attachments: Optional[List[Attachment]] = attr.ib(
         validator=validator__optional(
             validator__deep_iterable(
